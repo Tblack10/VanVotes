@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Response
-struct Response: Codable {
+struct Response: Codable, Hashable {
     let totalCount: Int
     let links: [Link]
     let records: [RecordElement]
@@ -20,26 +20,26 @@ struct Response: Codable {
 }
 
 // MARK: - Link
-struct Link: Codable {
+struct Link: Codable, Hashable {
     let rel: String
     let href: String
 }
 
 // MARK: - RecordElement
-struct RecordElement: Codable {
+struct RecordElement: Codable, Hashable {
     let links: [Link]
     let record: RecordRecord
 }
 
 // MARK: - RecordRecord
-struct RecordRecord: Codable {
+struct RecordRecord: Codable, Hashable {
     let id, timestamp: String
     let size: Int
     let fields: Fields
 }
 
 // MARK: - Fields
-struct Fields: Codable {
+struct Fields: Codable, Hashable {
     let meetingType: String
     let voteDate: String
     let voteNumber: Int
