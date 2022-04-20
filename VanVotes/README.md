@@ -1,0 +1,22 @@
+# VanVotes
+This application shows all votes of the current Vancouver City Councillors and Mayor over the years.
+
+
+
+### User Flow / UI
+ List View of Councillors
+    -> Image / Name
+ Click on item
+    -> Portrait
+    -> Name
+    -> Total Nay/Abstain/Yay/Absent
+ 
+    -> List View of Agenda Descriptions?
+    -> Colour Coded to Red/Yellow/Green/Blank
+        -> Nay/Abstain/Yay/Absent
+ 
+ 
+ Network Manager
+    -> Query for all votes from that user when pressed
+        -> Paginate the list
+ 
