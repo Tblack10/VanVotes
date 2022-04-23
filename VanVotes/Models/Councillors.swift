@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Councillors: String {
+enum Councillors: String, CaseIterable {
     case rebeccaBligh = "Rebecca Bligh"
     case christineBoyle = "Christine Boyle"
     case adrianeCarr = "Adriane Carr"

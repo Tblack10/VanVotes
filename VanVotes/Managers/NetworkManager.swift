@@ -9,12 +9,13 @@ import Foundation
 
 struct NetworkManager {
     static let shared = NetworkManager()
-    private let baseURL = "https://opendata.vancouver.ca/api/v2/catalog/datasets/council-voting-records/records?limit=10&offset=0&timezone=UTC"
+    private let baseURL = "https://opendata.vancouver.ca/api/v2/catalog/datasets/council-voting-records/"
     
     private init(){}
     
-    func getVotes() async throws -> Response {
-        guard let url = URL(string: baseURL) else {
+    func getVotes(page: Int) async throws -> Response {
+        let urlString = baseURL + "records?order_by=vote_date%20desc%2C%20vote_number%20desc&limit=30&offset=\(page)&timezone=UTC"
+        guard let url = URL(string: urlString) else {
             throw VVError.invalidEndpoint
         }
         

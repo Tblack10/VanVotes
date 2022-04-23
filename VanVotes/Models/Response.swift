@@ -40,6 +40,7 @@ struct RecordRecord: Codable, Hashable {
 
 // MARK: - Fields
 struct Fields: Codable, Hashable {
+    
     let meetingType: String
     let voteDate: String
     let voteNumber: Int
@@ -49,6 +50,9 @@ struct Fields: Codable, Hashable {
     let vote: String
     let decision: String
     let voteDetailID: Int
+    
+    // Uniquely Identify the Vote
+    let identifier = UUID()
 
     enum CodingKeys: String, CodingKey {
         case meetingType = "meeting_type"
@@ -59,5 +63,10 @@ struct Fields: Codable, Hashable {
         case councilMember = "council_member"
         case vote, decision
         case voteDetailID = "vote_detail_id"
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+
     }
 }
