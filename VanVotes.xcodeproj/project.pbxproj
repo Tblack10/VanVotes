@@ -28,7 +28,7 @@
 		6F9661C22812AC2900154F36 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		6F9C7837280C2F7500A7EDF9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		6FA035E1280BB83800C85A0C /* Councillors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Councillors.swift; sourceTree = "<group>"; };
-		6FA035E5280BC38200C85A0C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6FA035E5280BC38200C85A0C /* DevNotes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DevNotes.txt; sourceTree = "<group>"; };
 		6FA035E6280BC5F500C85A0C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6FA9A76027FD62C6002B6A6B /* VanVotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VanVotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA9A76327FD62C6002B6A6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 				6FA035DC280BB6AF00C85A0C /* Support */,
 				6FA035DB280BB6A400C85A0C /* Managers */,
 				6FA9A77127FD62C9002B6A6B /* Info.plist */,
-				6FA035E5280BC38200C85A0C /* README.md */,
+				6FA035E5280BC38200C85A0C /* DevNotes.txt */,
 			);
 			path = VanVotes;
 			sourceTree = "<group>";
