@@ -14,6 +14,7 @@ class LandingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
         tableView.backgroundColor = .systemGray6
+        tableView.isScrollEnabled = false
         return tableView
     }()
 
@@ -44,11 +45,21 @@ class LandingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell",
-                                                 for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath)
         cell.textLabel?.text = self.tableViewData[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(tableViewData[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        let vc = AllVotesVC()
+        vc.councillor = tableViewData[indexPath.row]
+        navigationController?.show(vc, sender: self)
+        
+    }
+    
     
 //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //        return "VanVotes"
@@ -60,6 +71,7 @@ class LandingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //        header.textLabel?.frame = header.bounds
 //        header.textLabel?.textAlignment = .center
 //    }
+    
 }
 
 

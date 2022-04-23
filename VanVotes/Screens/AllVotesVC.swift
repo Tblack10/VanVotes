@@ -9,7 +9,9 @@ import UIKit
 
 typealias TableDataSource = UITableViewDiffableDataSource<Int, Fields>
 
-class MainVC: UIViewController, UITableViewDelegate {
+class AllVotesVC: UIViewController, UITableViewDelegate {
+    
+    var councillor: String? = nil
     
     let tableView:UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -34,7 +36,7 @@ class MainVC: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "All Previous Votes"
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
@@ -44,7 +46,9 @@ class MainVC: UIViewController, UITableViewDelegate {
         
         Task {
             do {
-                let response = try await NetworkManager.shared.getVotes(page: 0)
+//                let response = try await NetworkManager.shared.getVotes(page: 0)
+                
+                let response = try await NetworkManager.shared.getVotes(page: 0, councillor: Councillors(rawValue: councillor!)!)
                 
                 for record in response.records {
                     
