@@ -27,6 +27,17 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
         let datasource = TableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: VoteDetailCell.reuseID, for: indexPath)
             
+            //TODO: Turn vote statuses into an enum -> Return UIColour
+            if (model.vote == "In Favour") {
+                cell.backgroundColor = .systemMint
+            } else if (model.vote == "In Opposition"){
+                cell.backgroundColor = .systemRed
+            } else if (model.vote == "Absent") {
+                cell.backgroundColor = .systemBrown
+            } else if (model.vote == "Abstain") {
+                cell.backgroundColor = .systemPink
+            }
+            
             cell.textLabel?.text = " \(model.agendaDescription) \n \(model.vote) \n \(model.decision) \n \(model.meetingType) \n \(model.voteDate)"
             cell.textLabel?.numberOfLines = 0
             return cell
@@ -47,25 +58,12 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
         
         Task {
             do {
-//                let response = try await NetworkManager.shared.getVotes(page: 0)
-                
                 let response = try await NetworkManager.shared.getVotes(page: 0, councillor: Councillors(rawValue: councillor!)!)
                 
                 for record in response.records {
-                    
-                    print(record.record.fields.councilMember)
-                    print(record.record.fields.vote)
-                    print(record.record.fields.agendaDescription)
-                    print(record.record.fields.voteNumber)
-                    print(record.record.fields.voteDate)
-                    
-                    print("----------------------------------------------------")
                     fields.append(record.record.fields)
                     updateData(on: fields)
-
                 }
-                
-                
             } catch {
                 print(error)
             }
@@ -73,19 +71,16 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        
-        if (fields.count-10) == (indexPath.row + 1){
+        if (fields.count - 15) == (indexPath.row){
             Task {
                 do {
                     let response = try await NetworkManager.shared.getVotes(page: indexPath.row)
-                    
+
                     for record in response.records {
                         fields.append(record.record.fields)
                         updateData(on: fields)
                     }
-                    
-                    
+
                 } catch {
                     print(error)
                 }
@@ -102,7 +97,7 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
         }
         snapshot.appendItems(fields)
         DispatchQueue.main.async {
-            self.datasource.apply(snapshot, animatingDifferences: true)
+            self.datasource.apply(snapshot, animatingDifferences: false)
         }
     }
     

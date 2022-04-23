@@ -9,7 +9,11 @@
     -> List View of Agenda Descriptions?
     -> Colour Coded to Red/Yellow/Green/Blank
         -> Nay/Abstain/Yay/Absent
- 
+        -> Images
+            = Absent | person.crop.circle.badge.questionmark.fill
+            = Yay| person.fill.checkmark | person.crop.circle.fill.badge.checkmark
+            = Abstain| person.fill.questionmark | folder.badge.person.crop
+            = Nay person.fill.xmark | person.crop.circle.fill.badge.xmark
  
  Network Manager
     -> Query for all votes from that user when pressed
@@ -18,3 +22,6 @@
 // TODO: 
 - Cache
 - Rework Cells For Info
+- View Votes By Category
+- Push If Meeting Occurs?
+

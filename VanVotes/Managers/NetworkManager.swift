@@ -28,7 +28,6 @@ struct NetworkManager {
     
     func getVotes(page: Int, councillor: Councillors) async throws -> Response {
         let name = councillor.urlSafeName().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        print(name)
         let urlString = baseURL + "records?vote_date%20desc%2C%20vote_number%20desc&limit=30&offset=\(page)&timezone=UTC&where=council_member%3D%27\(name)%27"
 
         guard let url = URL(string: urlString) else {
