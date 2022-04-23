@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F0ECB9F2813ABC000FE0783 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6F0ECB9E2813ABC000FE0783 /* .gitignore */; };
 		6F779180280F82D800F7CC67 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F77917F280F82D800F7CC67 /* ErrorMessage.swift */; };
 		6F9661C32812AC2900154F36 /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9661C22812AC2900154F36 /* LandingVC.swift */; };
 		6F9C7838280C2F7500A7EDF9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C7837280C2F7500A7EDF9 /* Response.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F0ECB9E2813ABC000FE0783 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6F77917F280F82D800F7CC67 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		6F9661C22812AC2900154F36 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		6F9C7837280C2F7500A7EDF9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		6FA9A75727FD62C6002B6A6B = {
 			isa = PBXGroup;
 			children = (
+				6F0ECB9E2813ABC000FE0783 /* .gitignore */,
 				6FA9A76227FD62C6002B6A6B /* VanVotes */,
 				6FA9A76127FD62C6002B6A6B /* Products */,
 			);
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FA9A77027FD62C9002B6A6B /* LaunchScreen.storyboard in Resources */,
+				6F0ECB9F2813ABC000FE0783 /* .gitignore in Resources */,
 				6FA9A76D27FD62C9002B6A6B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
