@@ -55,6 +55,9 @@ class LandingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
 
         let vc = AllVotesVC()
+        vc.title = "\(tableViewData[indexPath.row])"
+        UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
+
         vc.councillor = tableViewData[indexPath.row]
         navigationController?.show(vc, sender: self)
         

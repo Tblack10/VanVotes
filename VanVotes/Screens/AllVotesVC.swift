@@ -16,7 +16,8 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
     let tableView:UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
+        tableView.register(VoteDetailCell.self, forCellReuseIdentifier: VoteDetailCell.reuseID)
+        
         return tableView
     }()
     
@@ -24,9 +25,9 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
     
     lazy var datasource: TableDataSource = {
         let datasource = TableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: VoteDetailCell.reuseID, for: indexPath)
             
-            cell.textLabel?.text = "\(model.councilMember) + \(model.vote) + \(model.agendaDescription) + \(model.voteNumber) + \(model.decision) + \(model.meetingType) + \(model.voteDate)"
+            cell.textLabel?.text = " \(model.agendaDescription) \n \(model.vote) \n \(model.decision) \n \(model.meetingType) \n \(model.voteDate)"
             cell.textLabel?.numberOfLines = 0
             return cell
         })
@@ -36,7 +37,7 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "All Previous Votes"
+        
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true

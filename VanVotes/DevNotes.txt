@@ -15,3 +15,6 @@
     -> Query for all votes from that user when pressed
         -> Paginate the list
  
+// TODO: 
+- Cache
+- Rework Cells For Info
