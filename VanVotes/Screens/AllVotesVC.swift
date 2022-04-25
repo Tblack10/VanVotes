@@ -25,7 +25,7 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
     
     lazy var datasource: TableDataSource = {
         let datasource = TableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
-            let cell = tableView.dequeueReusableCell(withIdentifier: VoteDetailCell.reuseID, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: VoteDetailCell.reuseID, for: indexPath) as! VoteDetailCell
             
             //TODO: Turn vote statuses into an enum -> Return UIColour
             if (model.vote == "In Favour") {
@@ -37,8 +37,12 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
             } else if (model.vote == "Abstain") {
                 cell.backgroundColor = .systemPink
             }
+            cell.cellIdentifier = self.fields[indexPath.row].voteDetailID
+
+            if (cell.cellIdentifier == model.voteDetailID) {
+                cell.textLabel?.text = " \(model.agendaDescription) \n \(model.vote) \n \(model.decision) \n \(model.meetingType) \n \(model.voteDate) \(model.voteDetailID)"
+            }
             
-            cell.textLabel?.text = " \(model.agendaDescription) \n \(model.vote) \n \(model.decision) \n \(model.meetingType) \n \(model.voteDate)"
             cell.textLabel?.numberOfLines = 0
             return cell
         })
@@ -74,7 +78,7 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
         if (fields.count - 15) == (indexPath.row){
             Task {
                 do {
-                    let response = try await NetworkManager.shared.getVotes(page: indexPath.row)
+                    let response = try await NetworkManager.shared.getVotes(page: indexPath.row, councillor: Councillors(rawValue: councillor!)!)
 
                     for record in response.records {
                         fields.append(record.record.fields)

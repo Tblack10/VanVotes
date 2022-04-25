@@ -8,9 +8,10 @@
 import UIKit
 
 class VoteDetailCell: UITableViewCell {
+    
+    var cellIdentifier: Int? = nil
 
     public static let reuseID = "VoteDetailCell"
-    
 
     required init?(coder: NSCoder) {fatalError("init(coder:) has not been implemented")}
 
