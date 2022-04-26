@@ -27,23 +27,12 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
         let datasource = TableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: VoteDetailCell.reuseID, for: indexPath) as! VoteDetailCell
             
-            //TODO: Turn vote statuses into an enum -> Return UIColour
-            if (model.vote == "In Favour") {
-                cell.backgroundColor = .systemMint
-            } else if (model.vote == "In Opposition"){
-                cell.backgroundColor = .systemRed
-            } else if (model.vote == "Absent") {
-                cell.backgroundColor = .systemBrown
-            } else if (model.vote == "Abstain") {
-                cell.backgroundColor = .systemPink
-            }
             cell.cellIdentifier = self.fields[indexPath.row].voteDetailID
 
             if (cell.cellIdentifier == model.voteDetailID) {
-                cell.textLabel?.text = " \(model.agendaDescription) \n \(model.vote) \n \(model.decision) \n \(model.meetingType) \n \(model.voteDate) \(model.voteDetailID)"
+                cell.setCell(model: model)
             }
             
-            cell.textLabel?.numberOfLines = 0
             return cell
         })
         
@@ -91,7 +80,6 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
             }
         }
     }
-    
     
     
     func updateData(on field:  [Fields]) {

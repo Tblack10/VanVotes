@@ -10,6 +10,8 @@
 		6F0ECB9F2813ABC000FE0783 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6F0ECB9E2813ABC000FE0783 /* .gitignore */; };
 		6F0ECBA12813AC1B00FE0783 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6F0ECBA02813AC1B00FE0783 /* README.md */; };
 		6F0ECBA328140C0E00FE0783 /* VoteDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0ECBA228140C0E00FE0783 /* VoteDetailCell.swift */; };
+		6F29BB9628179A91009AD0EE /* VoteDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F29BB9528179A91009AD0EE /* VoteDecision.swift */; };
+		6F29BB9828179A97009AD0EE /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F29BB9728179A97009AD0EE /* Vote.swift */; };
 		6F779180280F82D800F7CC67 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F77917F280F82D800F7CC67 /* ErrorMessage.swift */; };
 		6F9661C32812AC2900154F36 /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9661C22812AC2900154F36 /* LandingVC.swift */; };
 		6F9C7838280C2F7500A7EDF9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C7837280C2F7500A7EDF9 /* Response.swift */; };
@@ -26,6 +28,8 @@
 		6F0ECB9E2813ABC000FE0783 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6F0ECBA02813AC1B00FE0783 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6F0ECBA228140C0E00FE0783 /* VoteDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteDetailCell.swift; sourceTree = "<group>"; };
+		6F29BB9528179A91009AD0EE /* VoteDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteDecision.swift; sourceTree = "<group>"; };
+		6F29BB9728179A97009AD0EE /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		6F77917F280F82D800F7CC67 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		6F9661C22812AC2900154F36 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		6F9C7837280C2F7500A7EDF9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 			children = (
 				6FA035E1280BB83800C85A0C /* Councillors.swift */,
 				6F9C7837280C2F7500A7EDF9 /* Response.swift */,
+				6F29BB9528179A91009AD0EE /* VoteDecision.swift */,
+				6F29BB9728179A97009AD0EE /* Vote.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,8 +231,10 @@
 				6FA035E2280BB83800C85A0C /* Councillors.swift in Sources */,
 				6F0ECBA328140C0E00FE0783 /* VoteDetailCell.swift in Sources */,
 				6FA035E7280BC5F500C85A0C /* NetworkManager.swift in Sources */,
+				6F29BB9628179A91009AD0EE /* VoteDecision.swift in Sources */,
 				6FA9A76427FD62C6002B6A6B /* AppDelegate.swift in Sources */,
 				6FA9A76627FD62C6002B6A6B /* SceneDelegate.swift in Sources */,
+				6F29BB9828179A97009AD0EE /* Vote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
