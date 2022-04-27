@@ -16,6 +16,7 @@ class VoteDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
         tableView.backgroundColor = .systemGray6
         tableView.isScrollEnabled = false
+        tableView.isUserInteractionEnabled = false
         return tableView
     }()
     
@@ -25,7 +26,7 @@ class VoteDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemGray6
-        self.title = voteDetails?.voteDate
+        self.title = voteDetails?.agendaDescription
         
         Task {
             do {
@@ -33,6 +34,8 @@ class VoteDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 for record in response.records {
                     allVotes.append(record.record.fields)
                     allVotes = allVotes.sorted { $0.councilMember < $1.councilMember }
+//                    print(record.record.fields.decision)
+//                    print(record.record.fields.vote)
                     tableView.reloadData()
                 }
             } catch { print(error)}
@@ -54,9 +57,28 @@ class VoteDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath)
-        cell.textLabel?.text = "\(allVotes[indexPath.row].vote) + \(allVotes[indexPath.row].councilMember)"
+        cell.textLabel?.text = "\(allVotes[indexPath.row].councilMember)"
+        
+        if (self.allVotes[indexPath.row].vote == Vote.favour.rawValue) {
+            cell.imageView?.image = Vote.favour.getRelatedImage()
+            cell.imageView?.tintColor = Vote.favour.getRelatedColour()
+        } else if (self.allVotes[indexPath.row].vote == Vote.opposition.rawValue){
+            cell.imageView?.image = Vote.opposition.getRelatedImage()
+            cell.imageView?.tintColor = Vote.opposition.getRelatedColour()
+        } else if (self.allVotes[indexPath.row].vote == Vote.absent.rawValue) {
+            cell.imageView?.image = Vote.absent.getRelatedImage()
+            cell.imageView?.tintColor = Vote.absent.getRelatedColour()
+        } else if (self.allVotes[indexPath.row].vote == Vote.abstain.rawValue) {
+            cell.imageView?.image = Vote.abstain.getRelatedImage()
+            cell.imageView?.tintColor = Vote.abstain.getRelatedColour()
+        } else if (self.allVotes[indexPath.row].vote == Vote.conflict.rawValue) {
+            cell.imageView?.image = Vote.conflict.getRelatedImage()
+            cell.imageView?.tintColor = Vote.conflict.getRelatedColour()
+        }
+        
         return cell
     }
+
     
 }
 

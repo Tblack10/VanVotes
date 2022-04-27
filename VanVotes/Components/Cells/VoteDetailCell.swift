@@ -40,11 +40,11 @@ class VoteDetailCell: UITableViewCell {
     /// Checks the decision of a vote and displays the appropriate background colour
     private func checkVoteOutcome() {
         if (self.model!.decision == VoteDecision.carriedUnanimously.rawValue) {
-            backgroundColor = .systemGreen
+            backgroundColor = VoteDecision.carriedUnanimously.getRelatedColour()
         } else if (self.model!.decision == VoteDecision.carried.rawValue){
-            backgroundColor = .systemMint
+            backgroundColor = VoteDecision.carried.getRelatedColour()
         } else if (self.model!.decision == VoteDecision.lost.rawValue) {
-            backgroundColor = .systemRed
+            backgroundColor = VoteDecision.lost.getRelatedColour()
         } else {
             backgroundColor = .systemBackground
         }
@@ -55,19 +55,19 @@ class VoteDetailCell: UITableViewCell {
     private func checkVote() {
         if (self.model!.vote == Vote.favour.rawValue) {
             imageView?.image = Vote.favour.getRelatedImage()
-            imageView?.tintColor = .systemGreen
+            imageView?.tintColor = Vote.favour.getRelatedColour()
         } else if (self.model!.vote == Vote.opposition.rawValue){
             imageView?.image = Vote.opposition.getRelatedImage()
-            imageView?.tintColor = .systemRed
+            imageView?.tintColor = Vote.opposition.getRelatedColour()
         } else if (self.model!.vote == Vote.absent.rawValue) {
             imageView?.image = Vote.absent.getRelatedImage()
-            imageView?.tintColor = .systemBackground
+            imageView?.tintColor = Vote.absent.getRelatedColour()
         } else if (self.model!.vote == Vote.abstain.rawValue) {
             imageView?.image = Vote.abstain.getRelatedImage()
-            imageView?.tintColor = .systemBrown
+            imageView?.tintColor = Vote.abstain.getRelatedColour()
         } else if (self.model!.vote == Vote.conflict.rawValue) {
             imageView?.image = Vote.conflict.getRelatedImage()
-            imageView?.tintColor = .systemPink
+            imageView?.tintColor = Vote.conflict.getRelatedColour()
         }
     }
     

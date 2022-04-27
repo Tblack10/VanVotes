@@ -17,7 +17,10 @@ enum Vote: String {
     case abstain = "Abstain"
     case conflict = "Declared Conflict"
     
-    func getRelatedImage() -> UIImage{
+    
+    /// Gets an SFSymbol image related to a vote
+    /// - Returns: A UIImage constructed from an SFSymbol
+    func getRelatedImage() -> UIImage {
         let largeConfiguration = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
 
         switch self {
@@ -30,7 +33,23 @@ enum Vote: String {
         case .abstain:
             return UIImage(systemName: "person.crop.circle.fill.badge.minus", withConfiguration: largeConfiguration)!
         case .conflict:
-            return UIImage(systemName: "heart.text.square", withConfiguration: largeConfiguration)!
+            return UIImage(systemName: "allergens", withConfiguration: largeConfiguration)!
         }
     }
+    
+    func getRelatedColour() -> UIColor {
+        switch self {
+        case .favour:
+            return .systemGreen
+        case .opposition:
+            return .systemRed
+        case .absent:
+            return .systemBackground
+        case .abstain:
+            return .systemBrown
+        case .conflict:
+            return .systemPink
+        }
+    }
+    
 }
