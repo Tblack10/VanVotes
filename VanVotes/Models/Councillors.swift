@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/// All Councillors and Mayors on the council
 enum Councillors: String, CaseIterable {
     case rebeccaBligh = "Councillor Rebecca Bligh"
     case christineBoyle = "Councillor Christine Boyle"

@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/// Possible error messages
 enum VVError: String, Error {
     case invalidUsername = "This username created an invalid request. Please Try Again."
     case unableToComplete = "Unable to complete your request. Please check your internet connection"

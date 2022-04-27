@@ -9,6 +9,8 @@ import UIKit
 
 typealias TableDataSource = UITableViewDiffableDataSource<Int, Fields>
 
+
+/// Displays all votes by a chosen councillor
 class AllVotesVC: UIViewController, UITableViewDelegate {
     
     var councillor: String? = nil
@@ -79,6 +81,16 @@ class AllVotesVC: UIViewController, UITableViewDelegate {
                 }
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        let vc = VoteDetailVC()
+        vc.title = "\(fields[indexPath.row])"
+        vc.voteDetails = fields[indexPath.row]
+        
+        navigationController?.show(vc, sender: self)
     }
     
     

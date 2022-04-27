@@ -24,4 +24,4 @@
 - Rework Cells For Info
 - View Votes By Category
 - Push If Meeting Occurs?
-
+- Indicate what colours mean on LandingVC

@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+
+/// Initial VC viewed by a user
 class LandingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)

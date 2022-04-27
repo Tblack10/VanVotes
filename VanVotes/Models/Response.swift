@@ -67,6 +67,5 @@ struct Fields: Codable, Hashable {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
-
     }
 }
