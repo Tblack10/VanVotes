@@ -20,7 +20,7 @@ struct NetworkManager {
     /// - Parameter page: the offeset of results to fetch from, as an Int
     /// - Returns: A Response
     func getVotes(page: Int) async throws -> Response {
-        let urlString = baseURL + "records?order_by=vote_date%20desc%2C%20vote_number%20desc&limit=30&offset=\(page)&timezone=UTC"
+        let urlString = baseURL + "records?order_by=vote_date%20desc%2C%20vote_number%20desc&limit=100&offset=\(page)&timezone=UTC"
         guard let url = URL(string: urlString) else {
             throw VVError.invalidEndpoint
         }

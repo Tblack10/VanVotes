@@ -39,8 +39,6 @@ class VoteDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 for record in response.records {
                     allVotes.append(record.record.fields)
                     allVotes = allVotes.sorted { $0.councilMember < $1.councilMember }
-//                    print(record.record.fields.decision)
-//                    print(record.record.fields.vote)
                     tableView.reloadData()
                 }
             } catch { print(error)}

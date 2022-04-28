@@ -11,7 +11,7 @@ typealias TableDataSource = UITableViewDiffableDataSource<Int, Fields>
 
 
 /// Displays all votes by a chosen councillor
-class AllVotesVC: UIViewController, UITableViewDelegate {
+class CouncillorVotesVC: UIViewController, UITableViewDelegate {
     
     var councillor: String? = nil
     

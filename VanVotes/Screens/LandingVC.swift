@@ -11,6 +11,24 @@ import UIKit
 
 /// Initial VC viewed by a user
 class LandingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    private static let IPHONE_4_SCREEN_SIZE: CGFloat = 670
+    
+    lazy var allVotesButton: UIButton = {
+        var config = UIButton.Configuration.filled()
+        config.title = "View All Votes"
+        config.baseBackgroundColor = .systemMint
+        
+        let button = UIButton(configuration: config,
+          primaryAction: UIAction() { _ in
+            let vc = VotesVC()
+            UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
+            self.navigationController?.show(vc, sender: self)
+           })
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -18,9 +36,8 @@ class LandingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.backgroundColor = .systemGray6
         
         //TODO: Move this into an extension (UIScreen)
-        if (UIScreen.main.bounds.height > 670) {
+        if (UIScreen.main.bounds.height > IPHONE_4_SCREEN_SIZE) {
             tableView.isScrollEnabled = false
-            tableView.isUserInteractionEnabled = false
         }
         
         return tableView
@@ -36,15 +53,25 @@ class LandingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         view.addSubview(tableView)
+        view.addSubview(allVotesButton)
+        
+        self.title = "VanVotes"
+        self.view.backgroundColor = .systemGray6
         
         tableView.delegate = self
         tableView.dataSource = self
-        self.title = "VanVotes"
-        self.view.backgroundColor = .systemGray6
-        tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        
+        allVotesButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        allVotesButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50).isActive = true
+        allVotesButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50).isActive = true
+        allVotesButton.heightAnchor.constraint(equalToConstant: 39).isActive = true
+        tableView.topAnchor.constraint(equalTo: self.allVotesButton.bottomAnchor, constant: 20).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,7 +88,7 @@ class LandingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let vc = AllVotesVC()
+        let vc = CouncillorVotesVC()
         vc.title = "\(tableViewData[indexPath.row])"
         UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
 
@@ -69,18 +96,6 @@ class LandingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         navigationController?.show(vc, sender: self)
         
     }
-    
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "VanVotes"
-//    }
-    
-//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-//        guard let header = view as? UITableViewHeaderFooterView else { return }
-//        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 40)
-//        header.textLabel?.frame = header.bounds
-//        header.textLabel?.textAlignment = .center
-//    }
     
 }
 

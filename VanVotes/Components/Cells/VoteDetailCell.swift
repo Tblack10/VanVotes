@@ -37,6 +37,17 @@ class VoteDetailCell: UITableViewCell {
     }
     
     
+    func setCellNoImage(model: Fields) {
+        self.model = model
+        checkVoteOutcome()
+        
+        imageView?.layer.cornerRadius = 6
+        imageView?.backgroundColor = .systemBackground
+        
+        textLabel?.text = " \n \(model.agendaDescription) \n\n  \(model.voteDate) \n"
+    }
+    
+    
     /// Checks the decision of a vote and displays the appropriate background colour
     private func checkVoteOutcome() {
         if (self.model!.decision == VoteDecision.carriedUnanimously.rawValue) {
