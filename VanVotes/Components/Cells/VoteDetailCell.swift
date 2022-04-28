@@ -50,36 +50,14 @@ class VoteDetailCell: UITableViewCell {
     
     /// Checks the decision of a vote and displays the appropriate background colour
     private func checkVoteOutcome() {
-        if (self.model!.decision == VoteDecision.carriedUnanimously.rawValue) {
-            backgroundColor = VoteDecision.carriedUnanimously.getRelatedColour()
-        } else if (self.model!.decision == VoteDecision.carried.rawValue){
-            backgroundColor = VoteDecision.carried.getRelatedColour()
-        } else if (self.model!.decision == VoteDecision.lost.rawValue) {
-            backgroundColor = VoteDecision.lost.getRelatedColour()
-        } else {
-            backgroundColor = .systemBackground
-        }
+        backgroundColor = VoteDecision(rawValue: self.model!.decision)?.getRelatedColour()
     }
     
     
     /// Checks an individual councillors vote and displays he appropriate image
     private func checkVote() {
-        if (self.model!.vote == Vote.favour.rawValue) {
-            imageView?.image = Vote.favour.getRelatedImage()
-            imageView?.tintColor = Vote.favour.getRelatedColour()
-        } else if (self.model!.vote == Vote.opposition.rawValue){
-            imageView?.image = Vote.opposition.getRelatedImage()
-            imageView?.tintColor = Vote.opposition.getRelatedColour()
-        } else if (self.model!.vote == Vote.absent.rawValue) {
-            imageView?.image = Vote.absent.getRelatedImage()
-            imageView?.tintColor = Vote.absent.getRelatedColour()
-        } else if (self.model!.vote == Vote.abstain.rawValue) {
-            imageView?.image = Vote.abstain.getRelatedImage()
-            imageView?.tintColor = Vote.abstain.getRelatedColour()
-        } else if (self.model!.vote == Vote.conflict.rawValue) {
-            imageView?.image = Vote.conflict.getRelatedImage()
-            imageView?.tintColor = Vote.conflict.getRelatedColour()
-        }
+        imageView?.image = Vote(rawValue: self.model!.vote)?.getRelatedImage()
+        imageView?.tintColor = Vote(rawValue: self.model!.vote)?.getRelatedColour()
     }
     
 
