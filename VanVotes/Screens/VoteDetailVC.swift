@@ -15,8 +15,13 @@ class VoteDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
         tableView.backgroundColor = .systemGray6
-        tableView.isScrollEnabled = false
-        tableView.isUserInteractionEnabled = false
+        tableView.isScrollEnabled = true
+        
+        if (UIScreen.main.bounds.height > 670) {
+            tableView.isScrollEnabled = false
+            tableView.isUserInteractionEnabled = false
+        }
+        
         return tableView
     }()
     
@@ -44,7 +49,7 @@ class VoteDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
+        tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true

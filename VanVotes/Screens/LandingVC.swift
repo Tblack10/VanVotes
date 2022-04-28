@@ -16,7 +16,13 @@ class LandingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
         tableView.backgroundColor = .systemGray6
-        tableView.isScrollEnabled = false
+        
+        //TODO: Move this into an extension (UIScreen)
+        if (UIScreen.main.bounds.height > 670) {
+            tableView.isScrollEnabled = false
+            tableView.isUserInteractionEnabled = false
+        }
+        
         return tableView
     }()
 
@@ -35,7 +41,7 @@ class LandingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         self.title = "VanVotes"
         self.view.backgroundColor = .systemGray6
-        tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
+        tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
