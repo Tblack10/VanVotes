@@ -9,7 +9,7 @@ import UIKit
 
 
 /// Displays details about a Vote
-class VoteDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class VoteDetailVC: UIViewController {
     private static let IPHONE_4_SCREEN_SIZE: CGFloat = 670
     
     var voteDetails: Fields? = nil
@@ -40,7 +40,7 @@ class VoteDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 }
 
 //MARK: Table View Config
-extension VoteDetailVC {
+extension VoteDetailVC: UITableViewDelegate, UITableViewDataSource  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.allVotes.count
     }

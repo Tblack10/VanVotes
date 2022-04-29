@@ -9,12 +9,14 @@ import UIKit
 
 typealias TableDataSource = UITableViewDiffableDataSource<Int, Fields>
 
-
 /// Displays all votes by a chosen councillor
-class CouncillorVotesVC: UIViewController, UITableViewDelegate {
+class CouncillorVotesVC: UIViewController {
     
+    //MARK: Class Vars
     var councillor: String? = nil
+    var fields: [Fields] = []
     
+    //MARK: UITableView Setup
     let tableView:UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -22,8 +24,6 @@ class CouncillorVotesVC: UIViewController, UITableViewDelegate {
         
         return tableView
     }()
-    
-    var fields: [Fields] = []
     
     lazy var datasource: TableDataSource = {
         let datasource = TableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
@@ -41,45 +41,22 @@ class CouncillorVotesVC: UIViewController, UITableViewDelegate {
         return datasource
     }()
     
+    //MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(tableView)
-        tableView.delegate = self
-        tableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        
-        Task {
-            do {
-                let response = try await NetworkManager.shared.getVotes(page: 0, councillor: Councillors(rawValue: councillor!)!)
-                
-                for record in response.records {
-                    fields.append(record.record.fields)
-                    updateData(on: fields)
-                }
-            } catch {
-                print(error)
-            }
-        }
+        configureConstraints()
+        fetchData(page: 0)
     }
     
+    
+}
+
+//MARK: UITableView
+extension CouncillorVotesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (fields.count - 15) == (indexPath.row){
-            Task {
-                do {
-                    let response = try await NetworkManager.shared.getVotes(page: indexPath.row, councillor: Councillors(rawValue: councillor!)!)
-
-                    for record in response.records {
-                        fields.append(record.record.fields)
-                        updateData(on: fields)
-                    }
-
-                } catch {
-                    print(error)
-                }
-            }
+            fetchData(page: indexPath.row)
         }
     }
     
@@ -104,5 +81,39 @@ class CouncillorVotesVC: UIViewController, UITableViewDelegate {
             self.datasource.apply(snapshot, animatingDifferences: false)
         }
     }
+
+}
+
+//MARK: Contraint Config
+extension CouncillorVotesVC {
+    private func configureConstraints() {
+        configureTableViewConstraints()
+    }
     
+    private func configureTableViewConstraints() {
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+    }
+}
+
+//MARK: Helper Methods
+extension CouncillorVotesVC {
+    private func fetchData(page: Int) {
+        Task {
+            do {
+                let response = try await NetworkManager.shared.getVotes(page: page, councillor: Councillors(rawValue: councillor!)!)
+                
+                for record in response.records {
+                    fields.append(record.record.fields)
+                    updateData(on: fields)
+                }
+            } catch {
+                print(error)
+            }
+        }
+    }
 }
