@@ -11,11 +11,14 @@ import UIKit
 
 /// Initial VC viewed by a user
 class LandingVC: UIViewController {
+    // MARK: Constants
     private static let IPHONE_4_SCREEN_SIZE:CGFloat = 670
     private let VOTEBUTTON_SIDE_INSETS:CGFloat = 50
+    private let VOTEBUTTON_TOP_INSET:CGFloat = 20
     private let TABLEVIEW_SIDE_INSETS:CGFloat = 30
-    private let TABLEVIEW_TOP_ANCHOR:CGFloat = 20
+    private let TABLEVIEW_TOP_INSET:CGFloat = 0
     
+    // MARK: UI
     lazy var allVotesButton: UIButton = {
         var config = UIButton.Configuration.filled()
         config.title = "View All Votes"
@@ -96,7 +99,7 @@ extension LandingVC {
     
     private func configureVoteButtonConstraints() {
         view.addSubview(allVotesButton)
-        allVotesButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        allVotesButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: VOTEBUTTON_TOP_INSET).isActive = true
         allVotesButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: VOTEBUTTON_SIDE_INSETS).isActive = true
         allVotesButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -VOTEBUTTON_SIDE_INSETS).isActive = true
         allVotesButton.heightAnchor.constraint(equalToConstant: 39).isActive = true
@@ -104,7 +107,7 @@ extension LandingVC {
     
     private func configureTableViewConstraints() {
         view.addSubview(tableView)
-        tableView.topAnchor.constraint(equalTo: self.allVotesButton.bottomAnchor, constant: TABLEVIEW_TOP_ANCHOR).isActive = true
+        tableView.topAnchor.constraint(equalTo: self.allVotesButton.bottomAnchor, constant: TABLEVIEW_TOP_INSET).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: TABLEVIEW_SIDE_INSETS).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -TABLEVIEW_SIDE_INSETS).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
