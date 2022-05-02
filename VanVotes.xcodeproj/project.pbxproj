@@ -37,6 +37,7 @@
 		6F77917F280F82D800F7CC67 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		6F9661C22812AC2900154F36 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		6F9C7837280C2F7500A7EDF9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		6F9EFC61281F8998002BA910 /* VanVotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VanVotes.entitlements; sourceTree = "<group>"; };
 		6FA035E1280BB83800C85A0C /* Councillors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Councillors.swift; sourceTree = "<group>"; };
 		6FA035E5280BC38200C85A0C /* DevNotes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DevNotes.txt; sourceTree = "<group>"; };
 		6FA035E6280BC5F500C85A0C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -146,6 +147,7 @@
 		6FA9A76227FD62C6002B6A6B /* VanVotes */ = {
 			isa = PBXGroup;
 			children = (
+				6F9EFC61281F8998002BA910 /* VanVotes.entitlements */,
 				6FE1CCE32819101D0041793F /* Extensions */,
 				6FA035E0280BB7A200C85A0C /* Models */,
 				6FA035DF280BB79A00C85A0C /* Components */,
@@ -387,6 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VanVotes/VanVotes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y2CU5N862T;
@@ -415,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VanVotes/VanVotes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y2CU5N862T;
