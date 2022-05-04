@@ -12,9 +12,11 @@ import Foundation
 struct NetworkManager {
     static let shared = NetworkManager()
     private let baseURL = "https://opendata.vancouver.ca/api/v2/catalog/datasets/council-voting-records/"
-    
+    private let tokenBaseURL = "https://550b-110-174-63-62.ngrok.io"
+
     private init(){}
     
+    //MARK: Votes Network Calls
     
     /// Gets all votes, ordered by date of vote and vote number (desc)
     /// - Parameter page: the offeset of results to fetch from, as an Int
@@ -72,5 +74,32 @@ struct NetworkManager {
         let response = try JSONDecoder().decode(Response.self, from: data)
         
         return response
+    }
+}
+
+//MARK: Token Network Calls
+extension NetworkManager {
+    func storeToken(_ id: String) async throws -> Int {
+        guard let url = URL(string: "\(tokenBaseURL)/token") else {
+            throw VVError.invalidEndpoint
+        }
+        
+        let json = [
+                   "apn_token": id,
+               ]
+        let jsonData = try! JSONSerialization.data(withJSONObject: json, options: [])
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+        
+        let (_, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw VVError.failedToEncode
+        }
+            
+        return 200
     }
 }
