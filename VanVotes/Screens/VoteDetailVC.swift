@@ -30,6 +30,16 @@ class VoteDetailVC: UIViewController {
         return tableView
     }()
     
+    private var agendaDescriptionLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textColor = .systemBlue
+        label.text = "Loading"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -60,15 +70,23 @@ extension VoteDetailVC: UITableViewDelegate, UITableViewDataSource  {
 //MARK: Constraint Config
 extension VoteDetailVC {
     private func configureConstraints() {
+        configureAgendaDescriptionLabel()
         configureTableViewConstraints()
     }
     
     private func configureTableViewConstraints() {
         view.addSubview(tableView)
-        tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: agendaDescriptionLabel.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+    
+    private func configureAgendaDescriptionLabel() {
+        view.addSubview(agendaDescriptionLabel)
+        agendaDescriptionLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        agendaDescriptionLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        agendaDescriptionLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
     }
 }
 
@@ -89,8 +107,8 @@ extension VoteDetailVC {
     
     private func configureUI() {
         self.view.backgroundColor = .systemGray6
-        self.title = voteDetails?.agendaDescription
-        
+        self.title = "Vote Breakdown"
+        agendaDescriptionLabel.text = voteDetails?.agendaDescription
         tableView.delegate = self
         tableView.dataSource = self
     }
