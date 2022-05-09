@@ -16,6 +16,15 @@ class CouncillorVotesVC: UIViewController {
     var councillor: String? = nil
     var fields: [Fields] = []
     
+    //MARK: UI Setup
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView(style: .large)
+        ai.translatesAutoresizingMaskIntoConstraints = false
+        ai.isHidden = true
+        ai.color = .systemMint
+        return ai
+    }()
+    
     //MARK: UITableView Setup
     let tableView:UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -46,6 +55,11 @@ class CouncillorVotesVC: UIViewController {
         super.viewDidLoad()
         
         configureConstraints()
+        
+        //Start Loading Animation
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        
         fetchData(page: 0)
     }
     
@@ -79,6 +93,7 @@ extension CouncillorVotesVC: UITableViewDelegate {
         snapshot.appendItems(fields)
         DispatchQueue.main.async {
             self.datasource.apply(snapshot, animatingDifferences: false)
+            if (!self.fields.isEmpty) { self.activityIndicator.stopAnimating() }
         }
     }
 
@@ -88,6 +103,7 @@ extension CouncillorVotesVC: UITableViewDelegate {
 extension CouncillorVotesVC {
     private func configureConstraints() {
         configureTableViewConstraints()
+        configureActivityIndicator()
     }
     
     private func configureTableViewConstraints() {
@@ -97,6 +113,12 @@ extension CouncillorVotesVC {
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+    }
+    
+    private func configureActivityIndicator() {
+        view.addSubview(activityIndicator)
+        activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
 }
 

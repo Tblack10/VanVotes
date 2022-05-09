@@ -15,6 +15,7 @@ class VoteDetailVC: UIViewController {
     var voteDetails: Fields? = nil
     var allVotes: [Fields] = []
     
+    //MARK: Table View Setup
     private var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,6 +31,15 @@ class VoteDetailVC: UIViewController {
         return tableView
     }()
     
+    //MARK: UI Setup
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView(style: .large)
+        ai.translatesAutoresizingMaskIntoConstraints = false
+        ai.isHidden = true
+        ai.color = .systemMint
+        return ai
+    }()
+    
     private var agendaDescriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textColor = .systemBlue
@@ -42,9 +52,12 @@ class VoteDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureConstraints()
         configureUI()
         fetchData()
-        configureConstraints()
+        
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
     }
     
 }
@@ -72,6 +85,7 @@ extension VoteDetailVC {
     private func configureConstraints() {
         configureAgendaDescriptionLabel()
         configureTableViewConstraints()
+        configureActivityIndicator()
     }
     
     private func configureTableViewConstraints() {
@@ -88,6 +102,12 @@ extension VoteDetailVC {
         agendaDescriptionLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         agendaDescriptionLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
     }
+    
+    private func configureActivityIndicator() {
+        view.addSubview(activityIndicator)
+        activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+    }
 }
 
 //MARK: Helper Functions and UI
@@ -99,9 +119,10 @@ extension VoteDetailVC {
                 for record in response.records {
                     allVotes.append(record.record.fields)
                     allVotes = allVotes.sorted { $0.councilMember < $1.councilMember }
+                    activityIndicator.stopAnimating()
                     tableView.reloadData()
                 }
-            } catch { print(error)}
+            } catch { print(error) }
         }
     }
     

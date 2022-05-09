@@ -22,6 +22,14 @@ class VotesVC: UIViewController {
     /// An array of all the votes that have been fetched
     var fields: [Fields] = []
     
+    // MARK: UI Setup
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView(style: .large)
+        ai.translatesAutoresizingMaskIntoConstraints = false
+        ai.isHidden = true
+        ai.color = .systemMint
+        return ai
+    }()
     
     // MARK: Table View Setup
     lazy var tableView:UITableView = {
@@ -56,6 +64,10 @@ class VotesVC: UIViewController {
         self.title = "Council Agendas"
         configureTableViewConstraints()
         fetchVotes()
+        
+        //Start Loading Animation
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
     }
     
 }
@@ -87,6 +99,7 @@ extension VotesVC: UITableViewDelegate {
         snapshot.appendItems(fields)
         DispatchQueue.main.async {
             self.datasource.apply(snapshot, animatingDifferences: false)
+            if (!self.fields.isEmpty) { self.activityIndicator.stopAnimating() }
         }
     }
 }
@@ -95,6 +108,7 @@ extension VotesVC: UITableViewDelegate {
 extension VotesVC {
     private func configureConstraints() {
         configureTableViewConstraints()
+        configureActivityIndicator()
     }
     
     private func configureTableViewConstraints() {
@@ -103,6 +117,12 @@ extension VotesVC {
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+    }
+    
+    private func configureActivityIndicator() {
+        view.addSubview(activityIndicator)
+        activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
     }
 }
 
