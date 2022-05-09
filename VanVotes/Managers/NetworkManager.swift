@@ -12,7 +12,7 @@ import Foundation
 struct NetworkManager {
     static let shared = NetworkManager()
     private let baseURL = "https://opendata.vancouver.ca/api/v2/catalog/datasets/council-voting-records/"
-    private let tokenBaseURL = "https://550b-110-174-63-62.ngrok.io"
+    private let tokenBaseURL = "https://hammerhead-app-xmwe7.ondigitalocean.app"
 
     private init(){}
     
@@ -96,10 +96,10 @@ extension NetworkManager {
         
         let (_, response) = try await URLSession.shared.data(for: request)
         
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201 else {
             throw VVError.failedToEncode
         }
             
-        return 200
+        return 201
     }
 }

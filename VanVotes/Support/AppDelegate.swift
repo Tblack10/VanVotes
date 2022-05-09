@@ -58,16 +58,25 @@ extension AppDelegate {
     
     // MARK: Push Notifications Delegate Methods
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-      let tokenParts = deviceToken.map { data in
-          String(format: "%02.2hhx", data)
-      }
-      let token = tokenParts.joined()
-      print("Device Token: \(token)")
+        let tokenParts = deviceToken.map { data in
+            String(format: "%02.2hhx", data)
+        }
+        let token = tokenParts.joined()
+        print("Device Token: \(token)")
+        
+        Task {
+            do {
+                let result = try await NetworkManager.shared.storeToken(token)
+                print(result)
+            } catch {
+                print(error)
+            }
+        }
     }
-
+    
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-      print("Failed to register: \(error)")
+        print("Failed to register: \(error)")
     }
-
+    
     
 }
