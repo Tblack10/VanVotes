@@ -33,7 +33,7 @@ class VoteDetailCell: UITableViewCell {
         imageView?.layer.cornerRadius = 6
         imageView?.backgroundColor = .systemBackground
         
-        textLabel?.text = " \n \(model.agendaDescription) \n\n  \(model.voteDate) \n"
+        textLabel?.text = " \n \(model.agendaDescription) \n\n  \(model.voteDate) \n\n \(model.meetingType) \n"
     }
     
     
@@ -44,7 +44,7 @@ class VoteDetailCell: UITableViewCell {
         imageView?.layer.cornerRadius = 6
         imageView?.backgroundColor = .systemBackground
         
-        textLabel?.text = " \n \(model.agendaDescription) \n\n  \(model.voteDate) \n"
+        textLabel?.text = " \n \(model.agendaDescription) \n\n  \(model.voteDate) \n\n \(model.meetingType) \n"
     }
     
     
