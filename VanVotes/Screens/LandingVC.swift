@@ -12,7 +12,7 @@ import UIKit
 /// Initial VC viewed by a user
 class LandingVC: UIViewController {
     // MARK: Constants
-    private static let IPHONE_4_SCREEN_SIZE:CGFloat = 670
+    private static let IPHONE_8PLUS_SCREEN_SIZE:CGFloat = 736
     private let VOTEBUTTON_SIDE_INSETS:CGFloat = 50
     private let VOTEBUTTON_TOP_INSET:CGFloat = 20
     private let TABLEVIEW_SIDE_INSETS:CGFloat = 30
@@ -41,9 +41,10 @@ class LandingVC: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
         tableView.backgroundColor = .systemGray6
+        tableView.showsVerticalScrollIndicator = false
         
         //TODO: Move this into an extension (UIScreen)
-        if (UIScreen.main.bounds.height > IPHONE_4_SCREEN_SIZE) {
+        if (UIScreen.main.bounds.height > IPHONE_8PLUS_SCREEN_SIZE) {
             tableView.isScrollEnabled = false
         }
         
