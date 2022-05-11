@@ -16,7 +16,8 @@ class LandingVC: UIViewController {
     private let VOTEBUTTON_SIDE_INSETS:CGFloat = 50
     private let VOTEBUTTON_TOP_INSET:CGFloat = 20
     private let TABLEVIEW_SIDE_INSETS:CGFloat = 30
-    private let TABLEVIEW_TOP_INSET:CGFloat = 0
+    private let TABLEVIEW_TOP_INSET:CGFloat = 20
+    private let TABLEVIEW_BOTTOM_INSET: CGFloat = -50
     
     // MARK: UI
     lazy var allVotesButton: UIButton = {
@@ -52,7 +53,9 @@ class LandingVC: UIViewController {
     let tableViewData: [String] = {
         var array: [String] = []
         for person in Councillors.allCases {
-            array.append(person.rawValue)
+            if (person.getStatus()) {
+                array.append(person.rawValue)
+            }
         }
         return array
     }()
@@ -110,7 +113,7 @@ extension LandingVC {
         tableView.topAnchor.constraint(equalTo: self.allVotesButton.bottomAnchor, constant: TABLEVIEW_TOP_INSET).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: TABLEVIEW_SIDE_INSETS).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -TABLEVIEW_SIDE_INSETS).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: TABLEVIEW_BOTTOM_INSET).isActive = true
     }
 }
 
