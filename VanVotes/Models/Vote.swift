@@ -44,7 +44,7 @@ enum Vote: String {
         case .opposition:
             return .systemRed
         case .absent:
-            return .systemBackground
+            return .systemGray
         case .abstain:
             return .systemBrown
         case .conflict:
