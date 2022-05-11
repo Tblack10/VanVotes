@@ -33,7 +33,7 @@ enum Vote: String {
         case .abstain:
             return UIImage(systemName: "person.crop.circle.fill.badge.minus", withConfiguration: largeConfiguration)!
         case .conflict:
-            return UIImage(systemName: "allergens", withConfiguration: largeConfiguration)!
+            return UIImage(systemName: "person.crop.circle.fill.badge.exclamationmark", withConfiguration: largeConfiguration)!
         }
     }
     
@@ -46,9 +46,9 @@ enum Vote: String {
         case .absent:
             return .systemGray
         case .abstain:
-            return .systemBrown
+            return .systemYellow
         case .conflict:
-            return .systemPink
+            return .systemOrange
         }
     }
     

@@ -25,3 +25,5 @@
 - View Votes By Category
 - Push If Meeting Occurs?
 - Indicate what colours mean on LandingVC
+- Add button/table to view previous councillers
+- Allow a user to save certain votes
