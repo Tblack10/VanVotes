@@ -16,7 +16,7 @@ class LandingVC: UIViewController {
     private let VOTEBUTTON_SIDE_INSETS:CGFloat = 50
     private let VOTEBUTTON_TOP_INSET:CGFloat = 20
     private let TABLEVIEW_SIDE_INSETS:CGFloat = 30
-    private let TABLEVIEW_TOP_INSET:CGFloat = 20
+    private let TABLEVIEW_TOP_INSET:CGFloat = 0
     private let TABLEVIEW_BOTTOM_INSET: CGFloat = -50
     
     // MARK: UI
