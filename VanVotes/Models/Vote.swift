@@ -16,6 +16,8 @@ enum Vote: String {
     case absent = "Absent"
     case abstain = "Abstain"
     case conflict = "Declared Conflict"
+    case ineligible = "Ineligible"
+    case noVote = "No Vote"
     
     
     /// Gets an SFSymbol image related to a vote
@@ -34,6 +36,12 @@ enum Vote: String {
             return UIImage(systemName: "person.crop.circle.fill.badge.minus", withConfiguration: largeConfiguration)!
         case .conflict:
             return UIImage(systemName: "person.crop.circle.fill.badge.exclamationmark", withConfiguration: largeConfiguration)!
+        case .ineligible:
+            return UIImage(systemName: "person.crop.circle.fill", withConfiguration: largeConfiguration)!
+        case .noVote:
+            return UIImage(systemName: "person.crop.circle.badge.fill", withConfiguration: largeConfiguration)!
+           
+            
         }
     }
     
@@ -49,6 +57,10 @@ enum Vote: String {
             return .systemYellow
         case .conflict:
             return .systemOrange
+        case .ineligible:
+            return .systemPink
+        case .noVote:
+            return .systemIndigo
         }
     }
     

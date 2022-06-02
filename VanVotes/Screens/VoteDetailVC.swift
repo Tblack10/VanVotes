@@ -157,6 +157,12 @@ extension VoteDetailVC {
                      handler: { [weak self] (action) in }),
             UIAction(title: "Abstain",
                      image: Vote.abstain.getRelatedImage().withTintColor(Vote.abstain.getRelatedColour()).withRenderingMode(.alwaysOriginal),
+                     handler: { [weak self] (action) in }),
+            UIAction(title: "Ineligible",
+                     image: Vote.ineligible.getRelatedImage().withTintColor(Vote.ineligible.getRelatedColour()).withRenderingMode(.alwaysOriginal),
+                     handler: { [weak self] (action) in }),
+            UIAction(title: "No Vote",
+                     image: Vote.noVote.getRelatedImage().withTintColor(Vote.noVote.getRelatedColour()).withRenderingMode(.alwaysOriginal),
                      handler: { [weak self] (action) in })
         ])
         
