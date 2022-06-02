@@ -79,6 +79,10 @@ struct NetworkManager {
 
 //MARK: Token Network Calls
 extension NetworkManager {
+    
+    /// Sends a APN Token to the serever to be stored
+    /// - Parameter id: the id of the APN
+    /// - Returns: a 201 if successfull, or a failedToEncodee if unsuccessful
     func storeToken(_ id: String) async throws -> Int {
         guard let url = URL(string: "\(tokenBaseURL)/token") else {
             throw VVError.invalidEndpoint

@@ -11,9 +11,12 @@
 		6F0ECB9F2813ABC000FE0783 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6F0ECB9E2813ABC000FE0783 /* .gitignore */; };
 		6F0ECBA12813AC1B00FE0783 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6F0ECBA02813AC1B00FE0783 /* README.md */; };
 		6F0ECBA328140C0E00FE0783 /* VoteDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0ECBA228140C0E00FE0783 /* VoteDetailCell.swift */; };
+		6F0FF7C9283C65A500E1808D /* VanVotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0FF7C8283C65A500E1808D /* VanVotesUITests.swift */; };
+		6F0FF7CB283C65A500E1808D /* VanVotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0FF7CA283C65A500E1808D /* VanVotesUITestsLaunchTests.swift */; };
 		6F29BB9628179A91009AD0EE /* VoteDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F29BB9528179A91009AD0EE /* VoteDecision.swift */; };
 		6F29BB9828179A97009AD0EE /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F29BB9728179A97009AD0EE /* Vote.swift */; };
 		6F29BB9A2817ACBE009AD0EE /* VoteDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F29BB992817ACBE009AD0EE /* VoteDetailVC.swift */; };
+		6F4FF194283A01CB004CA4F3 /* VVNetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4FF193283A01CB004CA4F3 /* VVNetworkManagerTests.swift */; };
 		6F779180280F82D800F7CC67 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F77917F280F82D800F7CC67 /* ErrorMessage.swift */; };
 		6F9661C32812AC2900154F36 /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9661C22812AC2900154F36 /* LandingVC.swift */; };
 		6F9C7838280C2F7500A7EDF9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C7837280C2F7500A7EDF9 /* Response.swift */; };
@@ -26,14 +29,36 @@
 		6FA9A77027FD62C9002B6A6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FA9A76E27FD62C9002B6A6B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6F0FF7CC283C65A500E1808D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FA9A75827FD62C6002B6A6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FA9A75F27FD62C6002B6A6B;
+			remoteInfo = VanVotes;
+		};
+		6F4FF195283A01CB004CA4F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FA9A75827FD62C6002B6A6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FA9A75F27FD62C6002B6A6B;
+			remoteInfo = VanVotes;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		6F0BDF2A281A202400035DB6 /* VotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotesVC.swift; sourceTree = "<group>"; };
 		6F0ECB9E2813ABC000FE0783 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6F0ECBA02813AC1B00FE0783 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6F0ECBA228140C0E00FE0783 /* VoteDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteDetailCell.swift; sourceTree = "<group>"; };
+		6F0FF7C6283C65A500E1808D /* VanVotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VanVotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F0FF7C8283C65A500E1808D /* VanVotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VanVotesUITests.swift; sourceTree = "<group>"; };
+		6F0FF7CA283C65A500E1808D /* VanVotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VanVotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6F29BB9528179A91009AD0EE /* VoteDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteDecision.swift; sourceTree = "<group>"; };
 		6F29BB9728179A97009AD0EE /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		6F29BB992817ACBE009AD0EE /* VoteDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteDetailVC.swift; sourceTree = "<group>"; };
+		6F4FF191283A01CB004CA4F3 /* VanVotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VanVotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F4FF193283A01CB004CA4F3 /* VVNetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VVNetworkManagerTests.swift; sourceTree = "<group>"; };
 		6F77917F280F82D800F7CC67 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		6F9661C22812AC2900154F36 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		6F9C7837280C2F7500A7EDF9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -51,6 +76,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6F0FF7C3283C65A500E1808D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F4FF18E283A01CB004CA4F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6FA9A75D27FD62C6002B6A6B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,6 +106,23 @@
 				6F0ECBA228140C0E00FE0783 /* VoteDetailCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		6F0FF7C7283C65A500E1808D /* VanVotesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6F0FF7C8283C65A500E1808D /* VanVotesUITests.swift */,
+				6F0FF7CA283C65A500E1808D /* VanVotesUITestsLaunchTests.swift */,
+			);
+			path = VanVotesUITests;
+			sourceTree = "<group>";
+		};
+		6F4FF192283A01CB004CA4F3 /* VanVotesTests */ = {
+			isa = PBXGroup;
+			children = (
+				6F4FF193283A01CB004CA4F3 /* VVNetworkManagerTests.swift */,
+			);
+			path = VanVotesTests;
 			sourceTree = "<group>";
 		};
 		6FA035DB280BB6A400C85A0C /* Managers */ = {
@@ -132,6 +188,8 @@
 				6F0ECBA02813AC1B00FE0783 /* README.md */,
 				6F0ECB9E2813ABC000FE0783 /* .gitignore */,
 				6FA9A76227FD62C6002B6A6B /* VanVotes */,
+				6F4FF192283A01CB004CA4F3 /* VanVotesTests */,
+				6F0FF7C7283C65A500E1808D /* VanVotesUITests */,
 				6FA9A76127FD62C6002B6A6B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				6FA9A76027FD62C6002B6A6B /* VanVotes.app */,
+				6F4FF191283A01CB004CA4F3 /* VanVotesTests.xctest */,
+				6F0FF7C6283C65A500E1808D /* VanVotesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +231,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6F0FF7C5283C65A500E1808D /* VanVotesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F0FF7CE283C65A500E1808D /* Build configuration list for PBXNativeTarget "VanVotesUITests" */;
+			buildPhases = (
+				6F0FF7C2283C65A500E1808D /* Sources */,
+				6F0FF7C3283C65A500E1808D /* Frameworks */,
+				6F0FF7C4283C65A500E1808D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6F0FF7CD283C65A500E1808D /* PBXTargetDependency */,
+			);
+			name = VanVotesUITests;
+			productName = VanVotesUITests;
+			productReference = 6F0FF7C6283C65A500E1808D /* VanVotesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		6F4FF190283A01CB004CA4F3 /* VanVotesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F4FF199283A01CB004CA4F3 /* Build configuration list for PBXNativeTarget "VanVotesTests" */;
+			buildPhases = (
+				6F4FF18D283A01CB004CA4F3 /* Sources */,
+				6F4FF18E283A01CB004CA4F3 /* Frameworks */,
+				6F4FF18F283A01CB004CA4F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6F4FF196283A01CB004CA4F3 /* PBXTargetDependency */,
+			);
+			name = VanVotesTests;
+			productName = VanVotesTests;
+			productReference = 6F4FF191283A01CB004CA4F3 /* VanVotesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6FA9A75F27FD62C6002B6A6B /* VanVotes */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6FA9A77427FD62C9002B6A6B /* Build configuration list for PBXNativeTarget "VanVotes" */;
@@ -198,6 +294,14 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					6F0FF7C5283C65A500E1808D = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 6FA9A75F27FD62C6002B6A6B;
+					};
+					6F4FF190283A01CB004CA4F3 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 6FA9A75F27FD62C6002B6A6B;
+					};
 					6FA9A75F27FD62C6002B6A6B = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -217,11 +321,27 @@
 			projectRoot = "";
 			targets = (
 				6FA9A75F27FD62C6002B6A6B /* VanVotes */,
+				6F4FF190283A01CB004CA4F3 /* VanVotesTests */,
+				6F0FF7C5283C65A500E1808D /* VanVotesUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6F0FF7C4283C65A500E1808D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F4FF18F283A01CB004CA4F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6FA9A75E27FD62C6002B6A6B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,6 +356,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6F0FF7C2283C65A500E1808D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F0FF7CB283C65A500E1808D /* VanVotesUITestsLaunchTests.swift in Sources */,
+				6F0FF7C9283C65A500E1808D /* VanVotesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F4FF18D283A01CB004CA4F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F4FF194283A01CB004CA4F3 /* VVNetworkManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6FA9A75C27FD62C6002B6A6B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,6 +395,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6F0FF7CD283C65A500E1808D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FA9A75F27FD62C6002B6A6B /* VanVotes */;
+			targetProxy = 6F0FF7CC283C65A500E1808D /* PBXContainerItemProxy */;
+		};
+		6F4FF196283A01CB004CA4F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FA9A75F27FD62C6002B6A6B /* VanVotes */;
+			targetProxy = 6F4FF195283A01CB004CA4F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		6FA9A76E27FD62C9002B6A6B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -270,6 +420,76 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6F0FF7CF283C65A500E1808D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y2CU5N862T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TBlack10.VanVotesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VanVotes;
+			};
+			name = Debug;
+		};
+		6F0FF7D0283C65A500E1808D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y2CU5N862T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TBlack10.VanVotesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VanVotes;
+			};
+			name = Release;
+		};
+		6F4FF197283A01CB004CA4F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y2CU5N862T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TBlack10.VanVotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VanVotes.app/VanVotes";
+			};
+			name = Debug;
+		};
+		6F4FF198283A01CB004CA4F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y2CU5N862T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TBlack10.VanVotesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VanVotes.app/VanVotes";
+			};
+			name = Release;
+		};
 		6FA9A77227FD62C9002B6A6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -391,7 +611,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = VanVotes/VanVotes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = Y2CU5N862T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VanVotes/Info.plist;
@@ -420,7 +640,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = VanVotes/VanVotes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = Y2CU5N862T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VanVotes/Info.plist;
@@ -445,6 +665,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6F0FF7CE283C65A500E1808D /* Build configuration list for PBXNativeTarget "VanVotesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F0FF7CF283C65A500E1808D /* Debug */,
+				6F0FF7D0283C65A500E1808D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F4FF199283A01CB004CA4F3 /* Build configuration list for PBXNativeTarget "VanVotesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F4FF197283A01CB004CA4F3 /* Debug */,
+				6F4FF198283A01CB004CA4F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6FA9A75B27FD62C6002B6A6B /* Build configuration list for PBXProject "VanVotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

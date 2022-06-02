@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6F4FF190283A01CB004CA4F3"
+               BuildableName = "VanVotesTests.xctest"
+               BlueprintName = "VanVotesTests"
+               ReferencedContainer = "container:VanVotes.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6F0FF7C5283C65A500E1808D"
+               BuildableName = "VanVotesUITests.xctest"
+               BlueprintName = "VanVotesUITests"
+               ReferencedContainer = "container:VanVotes.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

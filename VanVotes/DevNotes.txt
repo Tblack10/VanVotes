@@ -23,7 +23,9 @@
 - Cache
 - Rework Cells For Info
 - View Votes By Category
-- Push If Meeting Occurs?
 - Indicate what colours mean on LandingVC
-- Add button/table to view previous councillers
+- Add button/table to view previous councillors
 - Allow a user to save certain votes
+- Accessibility
+- Unit/UI Testing
+    - CI/CD Travis/Jenkins/Fastlane
