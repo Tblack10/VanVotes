@@ -43,13 +43,13 @@ struct Fields: Codable, Hashable {
     
     let meetingType: String
     let voteDate: String
-    let voteNumber: Int
+    let voteNumber: String
     let agendaDescription: String
     let voteStartDateTime: String
     let councilMember: String
     let vote: String
     let decision: String
-    let voteDetailID: Int
+    let voteDetailID: String
     
     // Uniquely Identify the Vote
     let identifier = UUID()

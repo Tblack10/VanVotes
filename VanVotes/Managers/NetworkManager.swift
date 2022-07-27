@@ -28,7 +28,7 @@ struct NetworkManager {
         }
         
         let(data, _) = try await URLSession.shared.data(from: url)
-            
+        let str = String(decoding: data, as: UTF8.self)
         let response = try JSONDecoder().decode(Response.self, from: data)
         
         return response

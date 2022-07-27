@@ -117,7 +117,7 @@ extension VoteDetailVC {
     private func fetchData() {
         Task {
             do {
-                let response = try await NetworkManager.shared.getVotes(page: 0, voteId: voteDetails!.voteNumber)
+                let response = try await NetworkManager.shared.getVotes(page: 0, voteId: Int(voteDetails!.voteNumber)!)
                 for record in response.records {
                     allVotes.append(record.record.fields)
                     allVotes = allVotes.sorted { $0.councilMember < $1.councilMember }

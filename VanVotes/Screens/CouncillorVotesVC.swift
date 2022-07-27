@@ -38,9 +38,9 @@ class CouncillorVotesVC: UIViewController {
         let datasource = TableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: VoteDetailCell.reuseID, for: indexPath) as! VoteDetailCell
             
-            cell.cellIdentifier = self.fields[indexPath.row].voteDetailID
+            cell.cellIdentifier = Int(self.fields[indexPath.row].voteDetailID)
 
-            if (cell.cellIdentifier == model.voteDetailID) {
+            if (cell.cellIdentifier == Int(model.voteDetailID)) {
                 cell.setCell(model: model)
             }
             

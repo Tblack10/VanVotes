@@ -44,9 +44,9 @@ class VotesVC: UIViewController {
         let datasource = TableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, model) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: VoteDetailCell.reuseID, for: indexPath) as! VoteDetailCell
             
-            cell.cellIdentifier = self.fields[indexPath.row].voteDetailID
+            cell.cellIdentifier = Int(self.fields[indexPath.row].voteDetailID)
 
-            if (cell.cellIdentifier == model.voteDetailID) {
+            if (cell.cellIdentifier == Int(model.voteDetailID)) {
                 cell.setCellNoImage(model: model)
 
             }
@@ -135,7 +135,7 @@ extension VotesVC {
                 counter += 1
                 for record in response.records {
                     let doesContain = fields.contains {
-                        $0.agendaDescription == record.record.fields.agendaDescription
+                        $0.voteNumber == record.record.fields.voteNumber
                     }
                     
                     if (!doesContain) {
