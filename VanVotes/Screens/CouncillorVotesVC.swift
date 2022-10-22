@@ -61,6 +61,8 @@ class CouncillorVotesVC: UIViewController {
         activityIndicator.isHidden = false
         
         fetchData(page: 0)
+        
+        createColourMenu()
     }
     
     
@@ -129,6 +131,11 @@ extension CouncillorVotesVC {
             do {
                 let response = try await NetworkManager.shared.getVotes(page: page, councillor: Councillors(rawValue: councillor!)!)
                 
+                if (response.records.isEmpty) {
+                    activityIndicator.stopAnimating()
+                    showEmptyStateView(with: "This member has yet to vote.", with: .pencilLine, in: self.view)
+                }
+                
                 for record in response.records {
                     fields.append(record.record.fields)
                     updateData(on: fields)
@@ -139,3 +146,5 @@ extension CouncillorVotesVC {
         }
     }
 }
+
+

@@ -29,3 +29,9 @@
 - Accessibility
 - Unit/UI Testing
     - CI/CD Travis/Jenkins/Fastlane
+- Add Biography / Contact Info for councillors
+    - https://vancouver.ca/your-government/candidates-councillor.aspx
+    - Add "mail" icon to navbar providing bio, email, etc
+- Previous vote statistics
+- Search bar for previous councillors
+- Image to cells on landing vc, with bio (info) button on right side

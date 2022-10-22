@@ -36,6 +36,22 @@ class LandingVC: UIViewController {
         return button
     }()
     
+    lazy var previousCouncillorsButton: UIButton = {
+        var config = UIButton.Configuration.filled()
+        config.title = "View Previous Councillors"
+        config.baseBackgroundColor = .systemBlue
+        
+        let button = UIButton(configuration: config,
+          primaryAction: UIAction() { _ in
+            let vc = PreviousCouncillorsVC()
+            UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
+            self.navigationController?.show(vc, sender: self)
+           })
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -98,6 +114,8 @@ extension LandingVC: UITableViewDelegate, UITableViewDataSource{
 extension LandingVC {
     private func configureConstraints() {
         configureVoteButtonConstraints()
+        configurePreviouseCouncillorsButtonConstraints()
+        
         configureTableViewConstraints()
     }
     
@@ -114,7 +132,15 @@ extension LandingVC {
         tableView.topAnchor.constraint(equalTo: self.allVotesButton.bottomAnchor, constant: TABLEVIEW_TOP_INSET).isActive = true
         tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: TABLEVIEW_SIDE_INSETS).isActive = true
         tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -TABLEVIEW_SIDE_INSETS).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: TABLEVIEW_BOTTOM_INSET).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.previousCouncillorsButton.topAnchor, constant: 0).isActive = true
+    }
+    
+    private func configurePreviouseCouncillorsButtonConstraints() {
+        view.addSubview(previousCouncillorsButton)
+        previousCouncillorsButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: VOTEBUTTON_SIDE_INSETS).isActive = true
+        previousCouncillorsButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -VOTEBUTTON_SIDE_INSETS).isActive = true
+        previousCouncillorsButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -VOTEBUTTON_TOP_INSET).isActive = true
+        previousCouncillorsButton.heightAnchor.constraint(equalToConstant: 39).isActive = true
     }
 }
 

@@ -136,37 +136,9 @@ extension VoteDetailVC {
         agendaDescriptionLabel.text = voteDetails?.agendaDescription
         tableView.delegate = self
         tableView.dataSource = self
-        createMenu()
+        createVoteMenu()
     }
     
     
-    /// Creates the help menu for the people icons
-    func createMenu() {
-        let items = UIMenu(title: "Help", options: .displayInline, children: [
-            UIAction(title: "Favour",
-                     image: Vote.favour.getRelatedImage().withTintColor(Vote.favour.getRelatedColour()).withRenderingMode(.alwaysOriginal),
-                     handler: { [weak self] (action) in }),
-            UIAction(title: "Opposition",
-                     image: Vote.opposition.getRelatedImage().withTintColor(Vote.opposition.getRelatedColour()).withRenderingMode(.alwaysOriginal),
-                     handler: { [weak self] (action) in }),
-            UIAction(title: "Absent",
-                     image: Vote.absent.getRelatedImage().withTintColor(Vote.absent.getRelatedColour()).withRenderingMode(.alwaysOriginal),
-                     handler: { [weak self] (action) in }),
-            UIAction(title: "Conflict",
-                     image: Vote.conflict.getRelatedImage().withTintColor(Vote.conflict.getRelatedColour()).withRenderingMode(.alwaysOriginal),
-                     handler: { [weak self] (action) in }),
-            UIAction(title: "Abstain",
-                     image: Vote.abstain.getRelatedImage().withTintColor(Vote.abstain.getRelatedColour()).withRenderingMode(.alwaysOriginal),
-                     handler: { [weak self] (action) in }),
-            UIAction(title: "Ineligible",
-                     image: Vote.ineligible.getRelatedImage().withTintColor(Vote.ineligible.getRelatedColour()).withRenderingMode(.alwaysOriginal),
-                     handler: { [weak self] (action) in }),
-            UIAction(title: "No Vote",
-                     image: Vote.noVote.getRelatedImage().withTintColor(Vote.noVote.getRelatedColour()).withRenderingMode(.alwaysOriginal),
-                     handler: { [weak self] (action) in })
-        ])
-        
-        let add = UIBarButtonItem(title: "Help", image: UIImage(systemName: "questionmark.circle"), primaryAction: nil, menu: items)
-        navigationItem.rightBarButtonItems = [add]
-    }
+
 }

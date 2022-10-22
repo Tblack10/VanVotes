@@ -30,4 +30,15 @@ class VanVotesUITestsLaunchTests: XCTestCase {
 
         add(attachment)
     }
+    
+    func testCouncillor_WhenTapped_ShouldReturnResults() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let tablesQuery = XCUIApplication().tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Councillor Sarah Kirby-Yung"]/*[[".cells.staticTexts[\"Councillor Sarah Kirby-Yung\"]",".staticTexts[\"Councillor Sarah Kirby-Yung\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        
+        XCTAssertTrue(app.tables.element(boundBy: 0).cells.count > 0)
+    }
 }

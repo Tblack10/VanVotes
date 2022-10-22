@@ -17,6 +17,10 @@
 		6F29BB9828179A97009AD0EE /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F29BB9728179A97009AD0EE /* Vote.swift */; };
 		6F29BB9A2817ACBE009AD0EE /* VoteDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F29BB992817ACBE009AD0EE /* VoteDetailVC.swift */; };
 		6F4FF194283A01CB004CA4F3 /* VVNetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4FF193283A01CB004CA4F3 /* VVNetworkManagerTests.swift */; };
+		6F6DC07F29037A8C00482A8C /* PreviousCouncillorsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6DC07E29037A8C00482A8C /* PreviousCouncillorsVC.swift */; };
+		6F6DC085290381F100482A8C /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6DC084290381F100482A8C /* EmptyStateView.swift */; };
+		6F6DC087290382AE00482A8C /* UIViewController+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6DC086290382AE00482A8C /* UIViewController+EmptyState.swift */; };
+		6F6DC0892903859900482A8C /* UIViewController+Menus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6DC0882903859900482A8C /* UIViewController+Menus.swift */; };
 		6F779180280F82D800F7CC67 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F77917F280F82D800F7CC67 /* ErrorMessage.swift */; };
 		6F9661C32812AC2900154F36 /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9661C22812AC2900154F36 /* LandingVC.swift */; };
 		6F9C7838280C2F7500A7EDF9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9C7837280C2F7500A7EDF9 /* Response.swift */; };
@@ -59,6 +63,10 @@
 		6F29BB992817ACBE009AD0EE /* VoteDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteDetailVC.swift; sourceTree = "<group>"; };
 		6F4FF191283A01CB004CA4F3 /* VanVotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VanVotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F4FF193283A01CB004CA4F3 /* VVNetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VVNetworkManagerTests.swift; sourceTree = "<group>"; };
+		6F6DC07E29037A8C00482A8C /* PreviousCouncillorsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousCouncillorsVC.swift; sourceTree = "<group>"; };
+		6F6DC084290381F100482A8C /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		6F6DC086290382AE00482A8C /* UIViewController+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EmptyState.swift"; sourceTree = "<group>"; };
+		6F6DC0882903859900482A8C /* UIViewController+Menus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Menus.swift"; sourceTree = "<group>"; };
 		6F77917F280F82D800F7CC67 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		6F9661C22812AC2900154F36 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		6F9C7837280C2F7500A7EDF9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -125,6 +133,14 @@
 			path = VanVotesTests;
 			sourceTree = "<group>";
 		};
+		6F6DC083290381E500482A8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6F6DC084290381F100482A8C /* EmptyStateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		6FA035DB280BB6A400C85A0C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +175,7 @@
 				6F0BDF2A281A202400035DB6 /* VotesVC.swift */,
 				6FA9A76727FD62C6002B6A6B /* CouncillorVotesVC.swift */,
 				6F29BB992817ACBE009AD0EE /* VoteDetailVC.swift */,
+				6F6DC07E29037A8C00482A8C /* PreviousCouncillorsVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -166,6 +183,7 @@
 		6FA035DF280BB79A00C85A0C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6F6DC083290381E500482A8C /* Views */,
 				6F0ECBA428140C1F00FE0783 /* Cells */,
 			);
 			path = Components;
@@ -224,6 +242,8 @@
 		6FE1CCE32819101D0041793F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6F6DC086290382AE00482A8C /* UIViewController+EmptyState.swift */,
+				6F6DC0882903859900482A8C /* UIViewController+Menus.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -379,8 +399,10 @@
 			files = (
 				6F9661C32812AC2900154F36 /* LandingVC.swift in Sources */,
 				6FA9A76827FD62C6002B6A6B /* CouncillorVotesVC.swift in Sources */,
+				6F6DC0892903859900482A8C /* UIViewController+Menus.swift in Sources */,
 				6F0BDF2B281A202400035DB6 /* VotesVC.swift in Sources */,
 				6F779180280F82D800F7CC67 /* ErrorMessage.swift in Sources */,
+				6F6DC087290382AE00482A8C /* UIViewController+EmptyState.swift in Sources */,
 				6F29BB9A2817ACBE009AD0EE /* VoteDetailVC.swift in Sources */,
 				6F9C7838280C2F7500A7EDF9 /* Response.swift in Sources */,
 				6FA035E2280BB83800C85A0C /* Councillors.swift in Sources */,
@@ -389,7 +411,9 @@
 				6F29BB9628179A91009AD0EE /* VoteDecision.swift in Sources */,
 				6FA9A76427FD62C6002B6A6B /* AppDelegate.swift in Sources */,
 				6FA9A76627FD62C6002B6A6B /* SceneDelegate.swift in Sources */,
+				6F6DC085290381F100482A8C /* EmptyStateView.swift in Sources */,
 				6F29BB9828179A97009AD0EE /* Vote.swift in Sources */,
+				6F6DC07F29037A8C00482A8C /* PreviousCouncillorsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +648,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = TBlack10.VanVotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -653,7 +677,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = TBlack10.VanVotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

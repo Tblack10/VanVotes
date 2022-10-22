@@ -68,8 +68,9 @@ class VotesVC: UIViewController {
         //Start Loading Animation
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
+        
+        createResultsMenu()
     }
-    
 }
 
 //MARK: TableView Setup
@@ -151,3 +152,4 @@ extension VotesVC {
         }
     }
 }
+

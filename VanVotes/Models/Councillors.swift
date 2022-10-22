@@ -10,15 +10,22 @@ import Foundation
 
 /// All Councillors and Mayors on the council
 enum Councillors: String, CaseIterable {
-    //2018 - 2022 Council
-    case rebeccaBligh = "Councillor Rebecca Bligh"
-    case christineBoyle = "Councillor Christine Boyle"
-    case adrianeCarr = "Councillor Adriane Carr"
-    case melissaDeGenova = "Councillor Melissa De Genova"
-    case lisaDominato = "Councillor Lisa Dominato"
-    case peteFry = "Councillor Pete Fry"
-    case colleenHardwick = "Councillor Colleen Hardwick"
+    //2022 - Present
     case sarahKirbyYung = "Councillor Sarah Kirby-Yung"
+    case lisaDominato = "Councillor Lisa Dominato"
+    case brianMontague = "Councillor Brian Montague"
+    case mikeKlassen = "Councillor Mike Klassen"
+    case peterMeiszner = "Councillor Peter Meiszner"
+    case rebeccaBligh = "Councillor Rebecca Bligh"
+    case lennyZhou = "Councillor Lenny Zhou"
+    case adrianeCarr = "Councillor Adriane Carr"
+    case christineBoyle = "Councillor Christine Boyle"
+    case peteFry = "Councillor Pete Fry"
+    case kenSim = "Mayor Ken Sim"
+
+    //2018 - 2022 Council
+    case melissaDeGenova = "Councillor Melissa De Genova"
+    case colleenHardwick = "Councillor Colleen Hardwick"
     case jeanSwanson = "Councillor Jean Swanson"
     case michaelWiebe = "Councillor Michael Wiebe"
     case kennedyStewart = "Mayor Kennedy Stewart"
@@ -40,23 +47,35 @@ enum Councillors: String, CaseIterable {
     /// - Returns: A councillors name ready to be used by the API, as a string
     func urlSafeName () -> String {
         switch self {
-            // 2018-2022 Council
+            // 2022 - Present
         case .rebeccaBligh:
             return "Councillor R Bligh"
         case .christineBoyle:
             return "Councillor C Boyle"
         case .adrianeCarr:
             return "Councillor A Carr"
-        case .melissaDeGenova:
-            return "Councillor M De Genova"
         case .lisaDominato:
             return "Councillor L Dominato"
         case .peteFry:
             return "Councillor P Fry"
-        case .colleenHardwick:
-            return "Councillor C Hardwick"
         case .sarahKirbyYung:
             return "Councillor S Kirby-Yung"
+        case .brianMontague:
+            return "Councillor B Montague"
+        case .mikeKlassen:
+            return "Councillor M Klassen"
+        case .peterMeiszner:
+            return "Councillor P Meiszner"
+        case .lennyZhou:
+            return "Councillor L Zhou"
+        case .kenSim:
+            return "Mayor K Sim"
+            
+            // 2018-2022 Council
+        case .melissaDeGenova:
+            return "Councillor M De Genova"
+        case .colleenHardwick:
+            return "Councillor C Hardwick"
         case .jeanSwanson:
             return "Councillor J Swanson"
         case .michaelWiebe:
@@ -93,29 +112,41 @@ enum Councillors: String, CaseIterable {
     /// - Returns: A boolean represent the status of the councillor, true is active, false is inactive
     func getStatus () -> Bool {
         switch self {
-            // 2018-2022 Council
+            // 2022 - Present Council
+        case .brianMontague:
+            return true
+        case .mikeKlassen:
+            return true
+        case .peterMeiszner:
+            return true
+        case .lennyZhou:
+            return true
+        case .kenSim:
+            return true
         case .rebeccaBligh:
             return true
         case .christineBoyle:
             return true
         case .adrianeCarr:
             return true
-        case .melissaDeGenova:
+        case .peteFry:
             return true
         case .lisaDominato:
             return true
-        case .peteFry:
-            return true
-        case .colleenHardwick:
-            return true
         case .sarahKirbyYung:
             return true
+            
+            // 2018-2022 Council
+        case .melissaDeGenova:
+            return false
+        case .colleenHardwick:
+            return false
         case .jeanSwanson:
-            return true
+            return false
         case .michaelWiebe:
-            return true
+            return false
         case .kennedyStewart:
-            return true
+            return false
             
             // 2014-2018 Council
         case .georgeAffleck:
