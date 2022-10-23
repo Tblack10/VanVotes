@@ -20,15 +20,28 @@ class VanVotesUITests: XCTestCase {
         app = XCUIApplication()
         app.launch()
     }
-    
-    //MARK: LandingVC Tests
-    func testThatAllCouncillorsAreVisibleOnLandingVC() {
         
+    func testCouncillor_WhenTapped_ShouldReturnResults() {
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        
+        XCTAssertTrue(app.tables.element(boundBy: 0).cells.count == 11)
     }
     
-    //MARK: VotesVC Tests
+    func testPreviousCouncillor_WhenTapped_ShouldReturnResults() {
+        let buttonsQuery = XCUIApplication().buttons
+        buttonsQuery.staticTexts["View Previous Councillors"].tap()
+        
+        XCTAssertTrue(app.tables.element(boundBy: 0).cells.count > 0)
+    }
     
-    //MARK: CouncillorVotesVC Tests
-    
-    //MARK: VoteDetailVC Tests
+
+    func testAllVotes_WhenTapped_ShouldReturnResults() {
+        let buttonsQuery = XCUIApplication().buttons
+        buttonsQuery.staticTexts["View All Votes"].tap()
+        let cells = app.tables.element(boundBy: 0).cells.element.waitForExistence(timeout: 5)
+      
+        XCTAssertTrue(cells.description.count > 0)
+        
+    }
 }

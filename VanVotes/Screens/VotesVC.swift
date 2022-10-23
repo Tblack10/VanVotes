@@ -62,7 +62,7 @@ class VotesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Council Agendas"
-        configureTableViewConstraints()
+        configureConstraints()
         fetchVotes()
         
         //Start Loading Animation
