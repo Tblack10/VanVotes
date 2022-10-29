@@ -24,13 +24,16 @@ class VanVotesUITests: XCTestCase {
     func testCouncillor_WhenTapped_ShouldReturnResults() {
         let table = app.tables.element(boundBy: 0).cells.element(boundBy: 0)
         
-        XCTAssertTrue(table.waitForExistence(timeout: 5), "Expected table to load but did not load")
+        XCTAssertTrue(table.waitForExistence(timeout: 10), "Expected table to load but did not load")
         app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
         
-        XCTAssertTrue(table.waitForExistence(timeout: 5), "Expected table to load but did not load")
+        XCTAssertTrue(table.waitForExistence(timeout: 10), "Expected table to load but did not load")
         app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
         
-        XCTAssertTrue(app.tables.element(boundBy: 0).cells.count == 11)
+        XCTAssertTrue(table.waitForExistence(timeout: 10), "Expected table to load but did not load")
+        
+        let cells = app.tables.element(boundBy: 0).cells.count
+        XCTAssertTrue(cells == 11, "Expected 11 cells but \(cells) found")
     }
     
     func testPreviousCouncillor_WhenTapped_ShouldReturnResults() {
