@@ -22,7 +22,12 @@ class VanVotesUITests: XCTestCase {
     }
         
     func testCouncillor_WhenTapped_ShouldReturnResults() {
+        let table = app.tables.element(boundBy: 0).cells.element(boundBy: 0)
+        
+        XCTAssertTrue(table.waitForExistence(timeout: 5), "Expected table to load but did not load")
         app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        
+        XCTAssertTrue(table.waitForExistence(timeout: 5), "Expected table to load but did not load")
         app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
         
         XCTAssertTrue(app.tables.element(boundBy: 0).cells.count == 11)
@@ -32,7 +37,7 @@ class VanVotesUITests: XCTestCase {
         let buttonsQuery = XCUIApplication().buttons
         buttonsQuery.staticTexts["View Previous Councillors"].tap()
         
-        XCTAssertTrue(app.tables.element(boundBy: 0).cells.count > 0)
+        XCTAssertTrue(app.tables.element(boundBy: 0).cells.count > 0, "Expected previous councillors to be displayed but were not displayed")
     }
     
 
@@ -41,7 +46,7 @@ class VanVotesUITests: XCTestCase {
         buttonsQuery.staticTexts["View All Votes"].tap()
         let cells = app.tables.element(boundBy: 0).cells.element.waitForExistence(timeout: 5)
       
-        XCTAssertTrue(cells.description.count > 0)
+        XCTAssertTrue(cells.description.count > 0, "Expected all votes to be displayed but were not displayed")
         
     }
 }
