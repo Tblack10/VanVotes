@@ -28,16 +28,16 @@ class VanVotesUITests: XCTestCase {
     }
         
     func testCouncillor_WhenTapped_ShouldReturnResults() {
-        XCTAssertTrue(app.tables.element(boundBy: 0).cells.element(boundBy: 0).waitForExistence(timeout: 10), "Expected table to load but did not load")
-        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        XCTAssertTrue(app.tables.firstMatch.cells.firstMatch.waitForExistence(timeout: 10), "Expected table to load but did not load")
+        app.tables.firstMatch.cells.firstMatch.tap()
         
-        XCTAssertTrue(app.tables.element(boundBy: 0).cells.element(boundBy: 0).waitForExistence(timeout: 10), "Expected table to load but did not load")
-        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        XCTAssertTrue(app.tables.firstMatch.staticTexts.firstMatch.waitForExistence(timeout: 10), "Expected table to load but did not load")
+        app.tables.firstMatch.staticTexts.firstMatch.tap()
         
-        XCTAssertTrue(app.tables.element(boundBy: 0).cells.element(boundBy: 0).waitForExistence(timeout: 10), "Expected table to load but did not load")
+        XCTAssertTrue(app.tables.firstMatch.cells.firstMatch.waitForExistence(timeout: 10), "Expected table to load but did not load")
         
-        let cells = app.tables.element(boundBy: 0).cells.count
-        XCTAssertTrue(cells > 0, "Expected 11 cells but \(cells) found")
+        let cells = app.tables.firstMatch.staticTexts.count
+        XCTAssertTrue(cells == 11, "Expected 11 cells but \(cells) found")
     }
     
     func testPreviousCouncillor_WhenTapped_ShouldReturnResults() {
